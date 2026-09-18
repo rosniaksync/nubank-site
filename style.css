@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --purple: #820AD1;
+    --purple-dark: #6B07B0;
+    --white: #FFF;
+    --dark: #0B0014;
+    --gray-text: #6B6B6B;
+}
+
+img {
+    height: 26px;
+    margin: 30px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark)
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    backdrop-filter: blur(10px);
+    padding: 0 30px;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+header nav a:hover {
+    color: var(--purple);
+}
+
+.nub {
+    border-radius: 30px;
+    background-color: var(--purple-dark);
+    color: var(--white);
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 100vh;
+    background-image: url(img/background-nubank.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
