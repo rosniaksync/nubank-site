@@ -11,6 +11,7 @@
     --white: #FFF;
     --dark: #0B0014;
     --gray-text: #6B6B6B;
+    --white-gray: rgba(255, 255, 255, 0.8);
 }
 
 img {
@@ -21,7 +22,6 @@ img {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--dark);
-    padding: 0 8px;
 }
 
 header {
@@ -61,6 +61,12 @@ header nav a:hover {
     padding: 10px 20px;
     font-weight: 700;
     font-size: 14px;
+    transition: 0.3s;
+}
+
+.nub:hover {
+    background-color: var(--dark);
+    color: var(--purple-dark);
 }
 
 .hero {
@@ -71,15 +77,15 @@ header nav a:hover {
     background-size: cover;
     border-radius: 0 0 40px 40px;
     overflow: hidden;
+    position: relative;
 }
 
 .hero::before {
-    height: 90vh;
-    border-radius: 0 0 30px 30px;
+    border-radius: inherit;
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
 }
 
 .hero-content {
@@ -107,7 +113,13 @@ header nav a:hover {
     width: 200px;
     text-align: center;
     margin-top: 20px;
+    transition: 0.3s;
 } 
+
+.hero-text .nub:hover {
+    background-color: var(--white);
+    color: var(--purple);
+}
 
 .hero-card {
     display: flex;
@@ -137,7 +149,7 @@ header nav a:hover {
     padding: 10px;
     border-radius: 20px;
     border: none;
-
+    background-color: #f4f4f4;
 }
 
 .hero-card form button {
@@ -147,17 +159,27 @@ header nav a:hover {
     background-color: var(--purple);
     color: var(--white);
     text-align: start;
+    cursor: pointer;
 }
 
-.role {
+.hero-card form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.products {
     height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32px;
     font-weight: 800;
-    color: var(--dark);
+    color: #000;
     letter-spacing: -1px;
+}
+
+.products a:hover {
+    color: var(--purple);
 }
 
 .card-section {
@@ -168,7 +190,6 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     gap: 84px;
-    border-radius: 0 0 40px 40px;
 }
 
 .card {
@@ -236,9 +257,109 @@ header nav a:hover {
 
 .card-text button {
     padding: 8px 10px;
-    max-width: 150px;
+    width: 150px;
     border-radius: 20px;
     color: var(--white);
     background-color: var(--purple-dark);
     border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card-text button:hover {
+    transform: translateY(-2px);
+    color: var(--purple);
+    background-color: var(--white);
+}
+
+.cta {
+    min-width: 1200px;
+    height: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple-dark);
+    color: var(--white);
+}
+
+.cta .title-cta {
+    font-size: 38px;
+}
+
+.cta .p-cta {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 10px 0;
+}
+
+.cta .btn-cta {
+    background-color: var(--white);
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 40px;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta .btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.foot {
+    height: 220px;
+    display: grid;
+    grid-template: repeat(1, 1fr) /
+    400px 1fr 1fr 1fr 250px;
+    place-items: center;
+    place-content: center; 
+}
+
+.foot-rights {
+    color: var(--white);
+    width: 200px;
+    height: 100px;
+    display: grid;
+    align-content: center;
+    gap: 16px;
+    margin-right: -150px;
+}
+
+.foot-rights img {
+    margin: 0;
+}
+
+.foot-rights p {
+    font-size: 12px;
+    color: var(--white-gray);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; 
+    gap: 5px;
+}
+
+.footer-links h4 {
+    margin-bottom: 7px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.footer-links a {
+    color: var(--white-gray);
+    font-size: 14px;
+    
 }
