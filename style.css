@@ -20,7 +20,8 @@ img {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--dark)
+    color: var(--dark);
+    padding: 0 8px;
 }
 
 header {
@@ -58,15 +59,186 @@ header nav a:hover {
     background-color: var(--purple-dark);
     color: var(--white);
     padding: 10px 20px;
-    text-align: center;
     font-weight: 700;
     font-size: 14px;
 }
 
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     background-image: url(img/background-nubank.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border-radius: 0 0 40px 40px;
+    overflow: hidden;
+}
+
+.hero::before {
+    height: 90vh;
+    border-radius: 0 0 30px 30px;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+}
+
+.hero-content {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -65%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-text {
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 400px;
+    margin-left: 40px;
+}
+
+.hero-text .nub {
+    width: 200px;
+    text-align: center;
+    margin-top: 20px;
+} 
+
+.hero-card {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 350px;
+    margin-right: 40px;
+    padding: 20px;
+    background-color: var(--white);
+}
+
+.hero-card h3{
+    font-size: 22px;
+    font-weight: 700;
+    flex: 1 1 30px;
+}
+
+.hero-card form {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.hero-card form input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+
+}
+
+.hero-card form button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--purple);
+    color: var(--white);
+    text-align: start;
+}
+
+.role {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -1px;
+}
+
+.card-section {
+    background-color: var(--dark);
+    color: var(--white);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 84px;
+    border-radius: 0 0 40px 40px;
+}
+
+.card {
+    background-color: var(--purple-dark);
+    height: 160px;
+    width: 280px;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.chip {
+    width: 28px;
+    height: 22px;
+    border-radius: 5px;
+    background-color: goldenrod;
+}
+
+.number {
+    margin-top: 25px;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos span {
+    opacity: 0.8;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.infos strong {
+    font-size: 22px;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+}
+
+.card-text h2 {
+    font-size: 38px;
+    line-height: 35px;
+} 
+
+.card-text p {
+    color: var(--gray-text);
+    font-weight: 600;
+    margin: 20px 0;
+} 
+
+.card-text ul {
+    margin-bottom: 30px;
+}
+
+.card-text ul li {
+    list-style: none;
+    font-size: 14px;
+    line-height: 2em;
+}
+
+.card-text button {
+    padding: 8px 10px;
+    max-width: 150px;
+    border-radius: 20px;
+    color: var(--white);
+    background-color: var(--purple-dark);
+    border: none;
 }
